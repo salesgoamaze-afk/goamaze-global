@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── GoAmaze Global Exporters Color System ─────────────────────
+   Primary GoAmaze Blue:  #3B82F6 (Store Primary Blue)
+   Deep Blue:             #0B2A4A (Hero / Footer / Premium Sections)
+   Turmeric Gold:         #D89B16 (Spices / Products / Highlights ~10%)
+   Warm Gold:             #F2B544 (Warm spice highlights)
+   Light Blue Background: #F3F7FB (Section backgrounds / clean accents)
+   White:                 #FFFFFF (70% Blue/White B2B clarity)
+   Charcoal:              #1F2933 (High-contrast typography)
+   Soft Border:           #E5EAF0 (Structured clean borders)
+─────────────────────────────────────────────────────────────── */
+:root {
+  --blue-primary:       #3B82F6; /* Primary GoAmaze Blue */
+  --blue-deep:          #0B2A4A; /* Deep Blue */
+  --blue-hover:         #2563EB;
+  --blue-sky:           #60A5FA;
+  --blue-light-bg:      #F3F7FB; /* Light Blue Background */
+
+  --gold-turmeric:      #D89B16; /* Turmeric Gold (~10% accent) */
+  --gold-warm:          #F2B544; /* Warm Gold */
+  --gold-light:         #FEF3C7;
+
+  --charcoal:           #1F2933; /* Charcoal */
+  --border-soft:        #E5EAF0; /* Soft Border */
+  --white:              #FFFFFF;
+
+  /* Deep Blue Canvas Tokens */
+  --bg-primary:         #0B2A4A;
+  --bg-secondary:       #0F3863;
+  --bg-card:            rgba(255, 255, 255, 0.05);
+  --bg-card-hover:      rgba(255, 255, 255, 0.09);
+  --border-glass:       rgba(229, 234, 240, 0.12);
+  --border-glass-hover: rgba(59, 130, 246, 0.50);
+
+  --text-primary:       #FFFFFF;
+  --text-secondary:     #E5EAF0;
+  --text-muted:         #94A3B8;
+
+  /* Brand Gradients */
+  --gradient-main:      linear-gradient(135deg, #60A5FA 0%, #3B82F6 60%, #2563EB 100%);
+  --gradient-blue:      linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #0B2A4A 100%);
+  --gradient-gold:      linear-gradient(135deg, #F2B544 0%, #D89B16 100%);
+  --gradient-gold-soft: linear-gradient(135deg, rgba(242, 181, 68, 0.15) 0%, rgba(216, 155, 22, 0.15) 100%);
+  --gradient-btn:       linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --gradient-btn-hover: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
+  --gradient-btn-gold:  linear-gradient(135deg, #F2B544 0%, #D89B16 100%);
+  --gradient-card:      linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+
+  --shadow-glow:        0 0 40px rgba(59, 130, 246, 0.25);
+  --shadow-gold-glow:   0 0 35px rgba(216, 155, 22, 0.25);
+  --shadow-card:        0 8px 32px rgba(11, 42, 74, 0.45);
+  --shadow-button:      0 8px 24px rgba(59, 130, 246, 0.35);
+  --shadow-button-gold: 0 8px 24px rgba(216, 155, 22, 0.35);
+
+  --radius-card:        20px;
+  --radius-button:      50px;
+
+  --font-heading:       'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body:          'Poppins', system-ui, -apple-system, sans-serif;
+  --font-script:        'Dancing Script', 'Intro Script', cursive, sans-serif;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3B82F6, #0B2A4A);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #60A5FA; }
+
+/* ─── Utility Classes ────────────────────────────────────────── */
+
+/* Gradient text (Primary GoAmaze Blue) */
+.gradient-text {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient text (Turmeric Gold ~10% spices highlight) */
+.gradient-text-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: var(--gradient-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-card);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--shadow-glow), var(--shadow-card);
+  transform: translateY(-3px);
+}
+
+/* Primary GoAmaze Blue button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gradient-btn);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--radius-button);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: var(--gradient-btn-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.50);
+  filter: brightness(1.08);
+}
+.btn-primary:active { transform: scale(0.98); }
+
+/* Turmeric Gold CTA button */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gradient-btn-gold);
+  color: #1F2933;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: var(--radius-button);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  cursor: pointer;
+  box-shadow: var(--shadow-button-gold);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(216, 155, 22, 0.50);
+  filter: brightness(1.08);
+}
+.btn-gold:active { transform: scale(0.98); }
+
+/* Ghost / outline button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 26px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.btn-ghost:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: rgba(59, 130, 246, 0.12);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Wide section wrapper with reduced side margins */
+.section-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section heading label with Turmeric Gold accent dot */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.30);
+  border-radius: 99px;
+  color: var(--blue-sky);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Turmeric Gold product badge */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(216, 155, 22, 0.12);
+  border: 1px solid rgba(216, 155, 22, 0.35);
+  border-radius: 99px;
+  color: var(--gold-warm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Glow blob (decorative) */
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+  50%       { box-shadow: 0 0 45px rgba(59, 130, 246, 0.45); }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.float-anim  { animation: float 4s ease-in-out infinite; }
+.glow-pulse  { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover,
+.carousel-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ─── Form Inputs & Textboxes ────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94A3B8 !important;
+  opacity: 1 !important;
+}
+
+select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* ─── Responsive Helpers ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section-wrapper { 
+    padding: 0 16px; 
+  }
+
+  .btn-primary, .btn-ghost {
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}

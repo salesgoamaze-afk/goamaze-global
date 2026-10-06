@@ -63,6 +63,7 @@ export default function RootLayout({
     description:
       'India-based merchant exporter supplying turmeric finger and turmeric powder to international buyers.',
     email: 'sales@goamazeglobal.com',
+    telephone: '+91 7021677207',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'India',

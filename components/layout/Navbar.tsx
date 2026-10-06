@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Logo } from '@/components/common/Logo';
-import { primaryNavItems, companyContact } from '@/data/navigation';
+import { primaryNavItems, companyContact, socialLinks } from '@/data/navigation';
 import { ArrowRight } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -70,8 +71,38 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* 3. Right: Single-Row CTA Button */}
-          <div className="hidden lg:flex items-center shrink-0">
+          {/* 3. Right: Social Icons + Single-Row CTA Button */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            {/* Social Icons in Header */}
+            <div className="flex items-center gap-1.5 pr-2 border-r border-white/10">
+              {socialLinks.map((s) => {
+                const IconComponent =
+                  s.id === 'linkedin'
+                    ? FaLinkedin
+                    : s.id === 'facebook'
+                    ? FaFacebook
+                    : s.id === 'instagram'
+                    ? FaInstagram
+                    : FaWhatsapp;
+
+                return (
+                  <motion.a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    whileHover={{ y: -2, scale: 1.15 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/50 text-white shadow-sm flex items-center justify-center transition-all duration-200 ${s.color}`}
+                  >
+                    <IconComponent size={16} className="shrink-0" />
+                  </motion.a>
+                );
+              })}
+            </div>
+
             <Link
               href="/get-a-quote"
               className="btn-primary py-2 px-5 text-xs xl:text-sm font-bold shadow-md"
@@ -161,7 +192,34 @@ export const Navbar: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-white/10 space-y-3">
+              <div className="pt-6 border-t border-white/10 space-y-4">
+                {/* Mobile Social Links */}
+                <div className="flex items-center justify-center gap-3">
+                  {socialLinks.map((s) => {
+                    const IconComponent =
+                      s.id === 'linkedin'
+                        ? FaLinkedin
+                        : s.id === 'facebook'
+                        ? FaFacebook
+                        : s.id === 'instagram'
+                        ? FaInstagram
+                        : FaWhatsapp;
+
+                    return (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.label}
+                        className={`w-9 h-9 rounded-lg bg-white/10 border border-white/20 text-white flex items-center justify-center transition-all ${s.color}`}
+                      >
+                        <IconComponent size={18} />
+                      </a>
+                    );
+                  })}
+                </div>
+
                 <Link
                   href="/get-a-quote"
                   className="btn-primary w-full text-center py-3.5"

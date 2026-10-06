@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Mail, Globe, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Globe, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
 import { companyContact } from '@/data/navigation';
@@ -9,7 +9,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Contact Us | Export Inquiries & Sourcing Desk',
   description:
-    'Get in touch with the GoAmaze Global Exporters trade desk. Reach out at sales@goamazeglobal.com for Indian turmeric sourcing, export partnerships, and product specifications.',
+    'Get in touch with the GoAmaze Global Exporters trade desk. Reach out at sales@goamazeglobal.com or +91 7021677207 for Indian turmeric sourcing, export partnerships, and product specifications.',
 };
 
 export default function ContactPage() {
@@ -73,6 +73,23 @@ export default function ContactPage() {
                       className="text-sm sm:text-base font-semibold text-blue-300 hover:text-white transition-colors font-body"
                     >
                       {companyContact.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block font-heading">
+                      Phone / WhatsApp
+                    </span>
+                    <a
+                      href={companyContact.phoneHref}
+                      className="text-sm sm:text-base font-semibold text-white hover:text-blue-300 transition-colors font-body block"
+                    >
+                      {companyContact.phone}
                     </a>
                   </div>
                 </div>

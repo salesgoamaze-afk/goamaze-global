@@ -9,16 +9,10 @@ import {
   footerProductLinks,
   footerLegalLinks,
   companyContact,
+  socialLinks,
 } from '@/data/navigation';
 import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { Mail, Globe, ArrowRight } from 'lucide-react';
-
-const socials = [
-  { icon: <FaLinkedin size={18} />, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: <FaFacebook size={18} />, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: <FaInstagram size={18} />, href: 'https://instagram.com', label: 'Instagram' },
-  { icon: <FaWhatsapp size={18} />, href: `mailto:${companyContact.email}`, label: 'WhatsApp / Inquiry' },
-];
+import { Mail, Globe, ArrowRight, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -40,36 +34,35 @@ export const Footer: React.FC = () => {
             <p className="text-xs font-bold text-[#F2B544] tracking-wider uppercase">
               {companyContact.tagline}
             </p>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              {companyContact.description}
-            </p>
 
-            {/* Social Icons */}
-            <div className="flex gap-2.5 pt-2">
-              {socials.map((s) => (
-                <motion.a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  title={s.label}
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  style={{
-                    color: '#94A3B8',
-                    padding: '8px',
-                    borderRadius: '10px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                  className="hover:text-blue-400 hover:border-blue-500/40 transition-colors"
-                >
-                  {s.icon}
-                </motion.a>
-              ))}
+            {/* Social Icons - Bigger & Brighter */}
+            <div className="flex items-center gap-3 pt-3">
+              {socialLinks.map((s) => {
+                const IconComponent =
+                  s.id === 'linkedin'
+                    ? FaLinkedin
+                    : s.id === 'facebook'
+                    ? FaFacebook
+                    : s.id === 'instagram'
+                    ? FaInstagram
+                    : FaWhatsapp;
+
+                return (
+                  <motion.a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    whileHover={{ y: -4, scale: 1.15 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 hover:border-white/60 text-white shadow-md hover:shadow-glow flex items-center justify-center transition-all duration-200 ${s.color}`}
+                  >
+                    <IconComponent size={22} className="shrink-0" />
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
 
@@ -132,6 +125,16 @@ export const Footer: React.FC = () => {
                   className="text-blue-300 hover:text-blue-200 underline"
                 >
                   {companyContact.email}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <a
+                  href={companyContact.phoneHref}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {companyContact.phone}
                 </a>
               </div>
 

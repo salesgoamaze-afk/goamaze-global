@@ -9,7 +9,7 @@ import { ShieldCheck, Ship, FileCheck } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Our Export Process | 6-Step International Trade Workflow',
   description:
-    'Learn how GoAmaze Global Exporters manages international spice export from inquiry, requirement review, Indian sourcing, and quality checks to documentation and port dispatch.',
+    'Learn how GoAmaze Global Exporters manages international turmeric export from inquiry, requirement review, Indian sourcing, and quality checks to documentation and port dispatch.',
 };
 
 export default function OurProcessPage() {

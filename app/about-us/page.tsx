@@ -41,7 +41,7 @@ export default function AboutUsPage() {
             Your Trusted Export Partner from <span className="gradient-text">India</span>
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-body">
-            GoAmaze Global Exporters is an India-based merchant export business under the GoAmaze umbrella, connecting international buyers with quality products through dependable sourcing and professional export coordination.
+            GoAmaze Global Exporters is an India-based merchant export business, connecting international buyers with quality products through dependable sourcing and professional export coordination.
           </p>
         </div>
       </section>

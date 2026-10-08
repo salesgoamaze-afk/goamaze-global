@@ -21,7 +21,6 @@ export const footerCompanyLinks: NavItem[] = [
 export const footerProductLinks: NavItem[] = [
   { label: 'Turmeric Finger', href: '/products/turmeric-finger' },
   { label: 'Turmeric Powder', href: '/products/turmeric-powder' },
-  { label: 'Get a Quote', href: '/get-a-quote' },
 ];
 
 export const footerLegalLinks: NavItem[] = [
@@ -33,7 +32,7 @@ export const footerLegalLinks: NavItem[] = [
 
 export const companyContact = {
   name: 'GoAmaze Global Exporters',
-  brandRelationship: 'A GoAmaze Enterprise',
+  brandRelationship: 'GoAmaze Global',
   origin: 'India',
   email: 'sales@goamazeglobal.com',
   phone: '+91 7021677207',

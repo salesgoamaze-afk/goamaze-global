@@ -54,9 +54,6 @@ export default function ContactPage() {
                 <h2 className="text-xl sm:text-2xl font-bold text-white mt-1 font-heading">
                   {companyContact.name}
                 </h2>
-                <p className="text-xs text-slate-400 mt-0.5 font-body">
-                  Under the GoAmaze umbrella
-                </p>
               </div>
 
               <div className="space-y-3.5 pt-4 border-t border-white/10">

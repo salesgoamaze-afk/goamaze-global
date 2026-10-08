@@ -22,9 +22,6 @@ export default function DisclaimerPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
           Trade Disclaimer
         </h1>
-        <p className="text-xs text-slate-400 mt-2 font-body">
-          Effective Date: January 1, 2026 • Last Updated: 2026
-        </p>
       </div>
 
       <div className="glass-card p-8 sm:p-10 space-y-6 text-slate-300 text-sm leading-relaxed font-body">

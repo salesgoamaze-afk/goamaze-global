@@ -10,7 +10,7 @@ export const products: Product[] = [
     fullDescription: 'Our Indian Turmeric Fingers are carefully selected from prominent turmeric growing regions of India. Prized globally for their natural aroma, rich golden-yellow hue, and essential active properties, our whole dried fingers are ideal for international spice millers, extractors, food manufacturers, and repackagers. We coordinate sorting, grading, and bulk export packaging strictly in alignment with agreed buyer specifications.',
     origin: 'India',
     image: '/images/turmeric-finger.jpg',
-    badge: 'Whole Dried Spice',
+    badge: 'Whole Dried Turmeric',
     category: 'spices',
     highlights: [
       'Authentic Indian Origin',
@@ -97,7 +97,7 @@ export const products: Product[] = [
     fullDescription: 'Our Turmeric Powder is milled from premium-grade Indian turmeric fingers under hygienic, temperature-monitored grinding conditions. Delivering consistent golden-yellow coloration, fine granulation, and authentic aroma, it meets the rigorous demands of food manufacturers, seasoning compounders, and global distributors. We tailor the granulation mesh size, moisture criteria, and packaging to match your target market regulations.',
     origin: 'India',
     image: '/images/products/turmeric-powder.png',
-    badge: 'Milled Spice Powder',
+    badge: 'Milled Turmeric Powder',
     category: 'spices',
     highlights: [
       'Authentic Indian Origin',

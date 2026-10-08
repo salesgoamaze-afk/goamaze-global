@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                 <Globe className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="text-white font-semibold block">GoAmaze Global Exporters</span>
-                  <span>Origin: India (GoAmaze Enterprise)</span>
+                  <span>Origin: India</span>
                 </div>
               </div>
 

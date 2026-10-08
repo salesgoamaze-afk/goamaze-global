@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { Sparkles, X, ChevronLeft, ChevronRight, Maximize2, Play } from 'lucide-react';
 
 export interface CarouselSlide {
   id: string;
@@ -12,7 +12,9 @@ export interface CarouselSlide {
   tag: string;
   dotColor: string;
   badgeBg: string;
-  image: string;
+  image?: string;
+  video?: string;
+  mediaType?: 'image' | 'video';
   alt: string;
 }
 
@@ -25,6 +27,7 @@ export const CAROUSEL_SLIDES: CarouselSlide[] = [
     dotColor: 'bg-emerald-400',
     badgeBg: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
     image: '/images/carousel/turmeric-farm.jpg',
+    mediaType: 'image',
     alt: 'Lush green Indian turmeric plantation and fields',
   },
   {
@@ -35,16 +38,18 @@ export const CAROUSEL_SLIDES: CarouselSlide[] = [
     dotColor: 'bg-amber-400',
     badgeBg: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
     image: '/images/carousel/turmeric-harvest.jpg',
+    mediaType: 'image',
     alt: 'Freshly harvested turmeric roots in field basket',
   },
   {
     id: 'product',
-    title: 'High-Curcumin Spices',
+    title: 'High-Curcumin Turmeric',
     subtitle: 'Selected whole fingers and ultra-fine golden milled powder',
     tag: 'Export Grade',
     dotColor: 'bg-[#D89B16]',
     badgeBg: 'bg-amber-500/15 text-[#F2B544] border-[#D89B16]/30',
     image: '/images/carousel/turmeric-product.jpg',
+    mediaType: 'image',
     alt: 'Premium turmeric fingers and fine turmeric powder bowl',
   },
   {
@@ -55,6 +60,7 @@ export const CAROUSEL_SLIDES: CarouselSlide[] = [
     dotColor: 'bg-blue-400',
     badgeBg: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
     image: '/images/carousel/warehouse-logistics.jpg',
+    mediaType: 'image',
     alt: 'Modern export warehouse and forklift pallet handling',
   },
   {
@@ -65,7 +71,19 @@ export const CAROUSEL_SLIDES: CarouselSlide[] = [
     dotColor: 'bg-sky-400',
     badgeBg: 'bg-sky-500/10 text-sky-300 border-sky-500/20',
     image: '/images/carousel/global-shipping.jpg',
+    mediaType: 'image',
     alt: 'Container cargo ship in port ready for global export',
+  },
+  {
+    id: 'video-processing',
+    title: 'Turmeric Origin & Processing',
+    subtitle: 'Authentic farm harvest and high-curcumin spice processing in motion',
+    tag: 'Live Video',
+    dotColor: 'bg-red-400',
+    badgeBg: 'bg-red-500/15 text-red-300 border-red-500/30',
+    video: '/turmeric_video.mp4',
+    mediaType: 'video',
+    alt: 'Turmeric harvesting and processing video footage',
   },
 ];
 
@@ -86,7 +104,7 @@ export const HeroImageCarousel: React.FC = () => {
         <div className="inline-flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5 text-[#D89B16] animate-pulse" />
           <span className="font-semibold text-slate-300 tracking-wide uppercase text-[11px] font-heading">
-            Supply Chain & Origin Journey
+            Our Origin Journey
           </span>
         </div>
         <div className="hidden sm:inline-flex items-center gap-1.5 text-[11px] text-slate-400">
@@ -104,25 +122,41 @@ export const HeroImageCarousel: React.FC = () => {
               onClick={() => setSelectedSlide(slide)}
               className="group relative flex-shrink-0 w-[270px] sm:w-[320px] md:w-[360px] h-[190px] sm:h-[220px] md:h-[235px] rounded-2xl overflow-hidden cursor-pointer border border-white/10 hover:border-[#D89B16]/60 bg-gradient-to-b from-white/[0.08] to-white/[0.02] shadow-[0_8px_25px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_35px_rgba(216,155,22,0.25)] transition-all duration-300 transform hover:-translate-y-1"
             >
-              {/* Image Asset */}
-              <Image
-                src={slide.image}
-                alt={slide.alt}
-                fill
-                sizes="(max-width: 640px) 270px, (max-width: 768px) 320px, 360px"
-                className="object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
-                priority={idx < 5}
-              />
+              {/* Media Asset (Image or Video) */}
+              {slide.mediaType === 'video' && slide.video ? (
+                <video
+                  src={slide.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108 pointer-events-none"
+                />
+              ) : slide.image ? (
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 640px) 270px, (max-width: 768px) 320px, 360px"
+                  className="object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
+                  priority={idx < 5}
+                />
+              ) : null}
 
               {/* Gradient Scrims for text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07192C]/95 via-[#0B2A4A]/40 to-black/20 group-hover:from-[#07192C]/90 group-hover:via-[#0B2A4A]/30 transition-colors" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07192C]/95 via-[#0B2A4A]/40 to-black/20 group-hover:from-[#07192C]/90 group-hover:via-[#0B2A4A]/30 transition-colors pointer-events-none" />
 
               {/* Top Tag & Zoom icon */}
               <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide border backdrop-blur-md shadow-sm ${slide.badgeBg}`}
                 >
-                  <span className={`w-1.5 h-1.5 rounded-full ${slide.dotColor}`} />
+                  {slide.mediaType === 'video' ? (
+                    <Play className="w-2.5 h-2.5 fill-current text-red-300" />
+                  ) : (
+                    <span className={`w-1.5 h-1.5 rounded-full ${slide.dotColor}`} />
+                  )}
                   {slide.tag}
                 </span>
 
@@ -175,15 +209,28 @@ export const HeroImageCarousel: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Modal Image */}
-              <div className="relative w-full h-72 sm:h-96 md:h-[420px]">
-                <Image
-                  src={selectedSlide.image}
-                  alt={selectedSlide.alt}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A4A] via-transparent to-black/30" />
+              {/* Modal Media */}
+              <div className="relative w-full h-72 sm:h-96 md:h-[420px] bg-black flex items-center justify-center">
+                {selectedSlide.mediaType === 'video' && selectedSlide.video ? (
+                  <video
+                    src={selectedSlide.video}
+                    autoPlay
+                    loop
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
+                ) : selectedSlide.image ? (
+                  <>
+                    <Image
+                      src={selectedSlide.image}
+                      alt={selectedSlide.alt}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A4A] via-transparent to-black/30 pointer-events-none" />
+                  </>
+                ) : null}
               </div>
 
               {/* Modal Content */}
@@ -204,7 +251,7 @@ export const HeroImageCarousel: React.FC = () => {
                 </p>
                 <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                   <span className="text-xs text-slate-400 font-body">
-                    GoAmaze Global Exporters • Farm-to-Port Direct Supply Chain
+                    GoAmaze Global Exporters • Farm-Port-You
                   </span>
                   <button
                     onClick={() => setSelectedSlide(null)}

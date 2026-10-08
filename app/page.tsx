@@ -55,7 +55,7 @@ export default function HomePage() {
             >
               <div className="section-label mb-1 inline-flex">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span>GoAmaze Enterprise • Indian Merchant Exporters</span>
+                <span>GoAmaze Global • Indian Merchant Exporters</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-heading">

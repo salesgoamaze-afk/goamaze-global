@@ -229,7 +229,7 @@ export async function sendQuoteRequestEmail(
 
             <!-- Footer -->
             <div style="background: #071E36; padding: 18px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: #64748B;">
-              Sent to <strong>${SALES_EMAIL}</strong> &bull; GoAmaze Global Exporters (A GoAmaze Enterprise)
+              Sent to <strong>${SALES_EMAIL}</strong> &bull; GoAmaze Global Exporters
             </div>
           </div>
         </body>

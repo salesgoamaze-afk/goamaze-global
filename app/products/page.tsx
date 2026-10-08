@@ -44,25 +44,6 @@ export default function ProductsPage() {
       <section className="section-wrapper">
         <ProductGrid products={products} />
       </section>
-
-      {/* Custom Specification & Buyer Notice */}
-      <section className="section-wrapper">
-        <div className="glass-card p-8 sm:p-10 border-blue-500/30">
-          <div className="max-w-3xl mx-auto text-center space-y-3">
-            <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
-              Need Tailored Product Specifications or Special Packaging?
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-body">
-              We work with international buyers on custom requirements — including specific polishing levels (unpolished / single / double), custom mesh powder granulation, multiwall paper or bulk PP/Jute export packaging, and third-party laboratory documentation.
-            </p>
-            <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
-              <CTAButton href="/get-a-quote" variant="primary" size="md" icon>
-                Request Custom Quotation
-              </CTAButton>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

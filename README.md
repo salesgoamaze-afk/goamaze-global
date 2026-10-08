@@ -1,6 +1,6 @@
 # GoAmaze Global Exporters
 
-**GoAmaze Global Exporters** is a high-performance, production-ready B2B international export website for Indian spices and commodities (initially focusing on Turmeric Finger and Turmeric Powder), operating under the **GoAmaze** enterprise umbrella.
+**GoAmaze Global Exporters** is a high-performance, production-ready B2B international export website for Indian spices and commodities (initially focusing on Turmeric Finger and Turmeric Powder).
 
 ---
 

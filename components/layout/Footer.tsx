@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
           {/* Column 1: Brand */}
           <div className="space-y-4">
-            <Logo size={50} />
+            <Logo size={46} />
             <p className="text-xs font-bold text-[#F2B544] tracking-wider uppercase">
               {companyContact.tagline}
             </p>

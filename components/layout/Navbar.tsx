@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
         <div className="section-wrapper h-full flex flex-row items-center justify-between flex-nowrap gap-3">
           {/* 1. Left: Brand Logo */}
           <div className="flex items-center shrink-0">
-            <Logo size={scrolled ? 46 : 52} />
+            <Logo size={scrolled ? 40 : 46} />
           </div>
 
           {/* 2. Center: Single-Row Bold Navigation Tabs */}

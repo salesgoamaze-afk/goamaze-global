@@ -12,7 +12,7 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({
   className = '',
-  size = 52,
+  size = 46,
 }) => {
   return (
     <motion.div whileHover={{ scale: 1.02 }} className={`inline-flex items-center shrink-0 ${className}`}>
@@ -24,8 +24,8 @@ export const Logo: React.FC<LogoProps> = ({
         <div
           style={{
             height: `${size}px`,
-            width: `${Math.round(size * 3.74)}px`,
-            maxWidth: '240px',
+            width: `${Math.round(size * 5.17)}px`,
+            maxWidth: '290px',
             position: 'relative',
           }}
           className="flex items-center transition-opacity group-hover:opacity-95"
@@ -34,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({
             src="/logo-full.png"
             alt="GoAmaze Global Exporters"
             fill
-            sizes="(max-width: 640px) 180px, 240px"
+            sizes="(max-width: 640px) 230px, 290px"
             className="object-contain object-left"
             priority
           />

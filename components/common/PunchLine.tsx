@@ -48,7 +48,7 @@ export const PunchLine: React.FC<PunchLineProps> = ({
         >
           Amaze
         </span>
-        <span style={{ color: '#FFFFFF' }}>, Your Gateway to </span>
+        <span style={{ color: '#FFFFFF' }}>,Your Gateway to </span>
         <span
           style={{
             background: 'linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%)',

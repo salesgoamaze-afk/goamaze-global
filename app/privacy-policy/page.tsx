@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="glass-card p-8 sm:p-10 space-y-6 text-slate-300 text-sm leading-relaxed font-body">
         <p>
-          At <strong className="text-white">{companyContact.name}</strong> (a GoAmaze enterprise), we respect the privacy of our website visitors and international commercial partners. This Privacy Policy outlines the types of information we collect when you use our website and how we safeguard your data.
+          At <strong className="text-white">{companyContact.name}</strong> (GoAmaze Global), we respect the privacy of our website visitors and international commercial partners. This Privacy Policy outlines the types of information we collect when you use our website and how we safeguard your data.
         </p>
 
         <h2 className="text-lg font-bold text-white font-heading">1. Information We Collect</h2>

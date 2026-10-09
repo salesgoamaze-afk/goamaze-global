@@ -154,7 +154,7 @@ export const Footer: React.FC = () => {
         {/* Legal Sub-Footer */}
         <div className="py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            © {companyContact.year} {companyContact.name}. All Rights Reserved. (A GoAmaze Enterprise)
+            © {companyContact.year} {companyContact.name}. All Rights Reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6">
             {footerLegalLinks.map((link) => (

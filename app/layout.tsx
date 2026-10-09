@@ -1,7 +1,29 @@
 import type { Metadata } from 'next';
+import { Montserrat, Poppins, Dancing_Script } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700'],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-script',
+  weight: ['500', '600', '700'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://goamazeglobal.com'),
@@ -88,7 +110,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'GoAmaze Global Exporters',
-    legalName: 'GoAmaze Global Exporters (A GoAmaze Enterprise)',
+    legalName: 'GoAmaze Global Exporters',
     url: 'https://goamazeglobal.com',
     logo: 'https://goamazeglobal.com/logo.png',
     image: 'https://goamazeglobal.com/logo-full.png',
@@ -136,7 +158,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full dark"
+      className={`h-full dark ${montserrat.variable} ${poppins.variable} ${dancingScript.variable}`}
     >
       <head>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

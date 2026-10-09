@@ -130,7 +130,8 @@ export const HeroImageCarousel: React.FC = () => {
                   loop
                   muted
                   playsInline
-                  preload="auto"
+                  preload="none"
+                  poster="/images/carousel/turmeric-harvest.jpg"
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108 pointer-events-none"
                 />
               ) : slide.image ? (
@@ -140,7 +141,8 @@ export const HeroImageCarousel: React.FC = () => {
                   fill
                   sizes="(max-width: 640px) 270px, (max-width: 768px) 320px, 360px"
                   className="object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
-                  priority={idx < 5}
+                  priority={idx === 0}
+                  loading={idx === 0 ? 'eager' : 'lazy'}
                 />
               ) : null}
 

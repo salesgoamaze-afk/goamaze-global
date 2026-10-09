@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: 'Turmeric Finger | Indian Whole Dried Turmeric Exporter',
   description:
     'Source premium whole dried Indian Turmeric Fingers from GoAmaze Global Exporters. Multiple grades (unpolished/single/double polished), bulk packaging, and customized export specifications.',
+  alternates: {
+    canonical: "/turmeric-finger",
+  },
 };
 
 export default function TurmericFingerPage() {

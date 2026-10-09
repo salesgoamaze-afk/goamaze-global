@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: 'About Us | Your Trusted Indian Export Partner',
   description:
     'Learn about GoAmaze Global Exporters, an India-based merchant exporter under the GoAmaze umbrella committed to reliable sourcing and transparent B2B trade partnerships.',
+  alternates: {
+    canonical: "about-us",
+  },
 };
 
 export default function AboutUsPage() {

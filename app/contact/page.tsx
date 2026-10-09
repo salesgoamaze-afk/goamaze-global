@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Contact Us | Export Inquiries & Sourcing Desk',
   description:
     'Get in touch with the GoAmaze Global Exporters trade desk. Reach out at sales@goamazeglobal.com or +91 7021677207 for Indian turmeric sourcing, export partnerships, and product specifications.',
+  alternates: {
+    canonical: "/contact-us",
+  },
 };
 
 export default function ContactPage() {

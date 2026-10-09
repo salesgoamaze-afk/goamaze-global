@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: 'Turmeric Powder | Indian Ground Turmeric Exporter',
   description:
     'Source finely milled, premium Indian Turmeric Powder from GoAmaze Global Exporters. Custom mesh granulation, food-grade bulk packaging, and laboratory documentation support.',
+    alternates: {
+      canonical: "/turmeric-powder",
+    },
 };
 
 export default function TurmericPowderPage() {

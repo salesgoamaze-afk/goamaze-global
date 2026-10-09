@@ -31,8 +31,64 @@ export const metadata: Metadata = {
 };
 
 export default function OurProcessPage() {
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Import Indian Turmeric in Bulk: 6-Step Export Process',
+    description:
+      'A comprehensive step-by-step guide to importing whole turmeric fingers and turmeric powder from India via GoAmaze Global Exporters.',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'USD',
+      value: 'Contact for Quote',
+    },
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Submit Product Inquiry',
+        text: 'Submit requirement details specifying turmeric variety (Salem, Nizamabad, Rajapore), grade, volume (FCL/LCL), and destination port.',
+        url: 'https://goamazeglobal.com/get-a-quote',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Requirement Review & Proforma Invoice',
+        text: 'Review physical/chemical specifications, agreed Incoterms (FOB/CIF/CFR), and issue formal Proforma Invoice and commercial contract.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Origin Sourcing & Farmer Network Engagement',
+        text: 'Procure high-curcumin turmeric lots directly from verified agricultural processors in Sangli, Nanded, or Erode farming regions.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Lab Testing & Sample Approval',
+        text: 'Conduct HPLC testing for curcumin, moisture (<10%), heavy metal analysis, and courier pre-shipment samples for buyer sign-off.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 5,
+        name: 'Fumigation, Export Packing & Customs Clearance',
+        text: 'Pack in food-grade jute/PP bags, execute professional container fumigation, and obtain Phytosanitary and Spices Board certificates.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 6,
+        name: 'Port Dispatch & Document Transmission',
+        text: 'Dispatch container from JNPT / Nhava Sheva Port, Mumbai and transmit original Bill of Lading, Invoice, Packing List, and COA via DHL/FedEx.',
+      },
+    ],
+  };
+
   return (
     <div className="relative overflow-hidden pt-3 sm:pt-4 pb-14 sm:pb-20 space-y-8 sm:space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       {/* Ambient background glows */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="glow-blob w-[500px] h-[500px] bg-purple-600/10 -top-20 -left-20" />

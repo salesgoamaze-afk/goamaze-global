@@ -15,6 +15,9 @@ import { CTAButton } from '@/components/common/CTAButton';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
 import { ProductSpecTable } from '@/components/products/ProductSpecTable';
+import { FAQSection } from '@/components/common/FAQSection';
+import { turmericFingerFAQs } from '@/data/faqs';
+import { FileText, Award, Compass, Scale } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Turmeric Finger | Indian Whole Dried Turmeric Exporter',
@@ -200,6 +203,46 @@ export default function TurmericFingerPage() {
         </div>
       </section>
 
+      {/* AI Quick Fact Sheet / Direct Answer Summary */}
+      <section className="section-wrapper">
+        <div className="glass-card p-6 sm:p-8 bg-gradient-to-r from-blue-950/40 via-slate-900/60 to-blue-950/40 border-blue-500/30">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-white/10">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-400 font-heading">
+                B2B Procurement Summary
+              </span>
+              <h3 className="text-lg sm:text-xl font-bold text-white font-heading mt-0.5">
+                Indian Turmeric Finger Export Fact Sheet
+              </h3>
+            </div>
+            <span className="badge-gold self-start md:self-auto">HS Code: 0910.30.20</span>
+          </div>
+
+          <p className="mt-4 text-sm text-slate-200 leading-relaxed font-body">
+            <strong>GoAmaze Global Exporters</strong> supplies whole dried Indian Turmeric Fingers (<em>Curcuma longa</em>) sourced from Salem, Nizamabad, and Rajapore growing regions. Available in Double Polished, Single Polished, and Unpolished grades with curcumin potencies from <strong>2.5% to 5.0%+</strong> and moisture kept strictly below <strong>10.0%</strong>.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-4 border-t border-white/10 text-xs font-body">
+            <div className="space-y-1">
+              <span className="text-slate-400 flex items-center gap-1"><Scale className="w-3.5 h-3.5 text-blue-400" /> Minimum Order (MOQ)</span>
+              <p className="text-white font-semibold">1 MT (Air) / 18 MT (20&apos; FCL)</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-slate-400 flex items-center gap-1"><Award className="w-3.5 h-3.5 text-amber-400" /> Curcumin Range</span>
+              <p className="text-white font-semibold">2.5% – 5.0%+ (Tested)</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-slate-400 flex items-center gap-1"><Compass className="w-3.5 h-3.5 text-cyan-400" /> Port of Loading</span>
+              <p className="text-white font-semibold">JNPT / Nhava Sheva (INNSA)</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-slate-400 flex items-center gap-1"><FileText className="w-3.5 h-3.5 text-purple-400" /> Quality Documents</span>
+              <p className="text-white font-semibold">COA, Phyto, FSSAI, APEDA</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Specifications Table */}
       <section className="section-wrapper">
         <SectionHeading
@@ -275,6 +318,15 @@ export default function TurmericFingerPage() {
           </div>
         </div>
       </section>
+
+      {/* Turmeric Finger FAQ Section (AEO/GEO Optimized) */}
+      <FAQSection
+        badge="Product FAQs"
+        title="Turmeric Finger"
+        highlightedText="Buyer FAQs"
+        subtitle="Key questions on varieties, polishing grades, moisture limits, and international shipping."
+        faqs={turmericFingerFAQs}
+      />
 
       {/* Inquiry CTA Banner */}
       <section className="section-wrapper">

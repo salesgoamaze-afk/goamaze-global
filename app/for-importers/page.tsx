@@ -4,6 +4,8 @@ import { CheckCircle2 } from 'lucide-react';
 import { SectionHeading } from '@/components/common/SectionHeading';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
+import { FAQSection } from '@/components/common/FAQSection';
+import { importersFAQs } from '@/data/faqs';
 
 export const metadata: Metadata = {
   title: 'For Importers | Sourcing Partner for Indian Turmeric',
@@ -134,6 +136,15 @@ export default function ForImportersPage() {
           <QuoteForm />
         </Suspense>
       </section>
+
+      {/* Importers FAQ Section (AEO/GEO Optimized) */}
+      <FAQSection
+        badge="Importer Trade FAQs"
+        title="International Buyer"
+        highlightedText="Trade Questions"
+        subtitle="Key answers regarding Indian port logistics, custom documentation, and lead times."
+        faqs={importersFAQs}
+      />
     </div>
   );
 }

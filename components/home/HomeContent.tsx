@@ -13,6 +13,8 @@ import { ValueCard } from '@/components/common/ValueCard';
 import { PunchLine } from '@/components/common/PunchLine';
 import { HeroImageCarousel } from '@/components/common/HeroImageCarousel';
 import { TurmericHeroVisual } from '@/components/ui/TurmericHeroVisual';
+import { FAQSection } from '@/components/common/FAQSection';
+import { homeFAQs } from '@/data/faqs';
 
 export const HomeContent: React.FC = () => {
   return (
@@ -121,6 +123,9 @@ export const HomeContent: React.FC = () => {
           />
         </div>
       </section>
+
+      {/* 3. B2B IMPORTER FAQ SECTION (AEO / GEO OPTIMIZED) */}
+      <FAQSection faqs={homeFAQs} />
     </div>
   );
 };

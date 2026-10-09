@@ -184,6 +184,75 @@ export default function QualityCompliancePage() {
         </div>
       </section>
 
+      {/* Laboratory Testing & Regulatory Standards Reference Table */}
+      <section className="section-wrapper">
+        <SectionHeading
+          badge="Testing Protocols"
+          title="Laboratory Parameters & Testing Standards"
+          subtitle="Strict adherence to internationally recognized analytical methods and maximum residue limits."
+          align="left"
+        />
+
+        <div className="glass-card overflow-hidden border-blue-500/20">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs sm:text-sm text-slate-200">
+              <thead className="bg-white/[0.06] text-blue-300 font-heading font-bold uppercase text-xs tracking-wider border-b border-white/10">
+                <tr>
+                  <th scope="col" className="p-4 sm:p-5">Quality Parameter</th>
+                  <th scope="col" className="p-4 sm:p-5">Analytical Test Standard</th>
+                  <th scope="col" className="p-4 sm:p-5">Export Tolerance Limit</th>
+                  <th scope="col" className="p-4 sm:p-5">Compliance Benchmark</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 font-body">
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Curcumin Active Content</td>
+                  <td className="p-4 sm:p-5 text-slate-300">ISO 5564 / ASTA Method 18.0 / HPLC</td>
+                  <td className="p-4 sm:p-5 text-amber-300 font-semibold">2.5% to 5.0%+ (As Specified)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">Spices Board / Buyer Spec</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Moisture Content</td>
+                  <td className="p-4 sm:p-5 text-slate-300">ISO 939 / ASTA Method 2.0</td>
+                  <td className="p-4 sm:p-5 text-emerald-300 font-semibold">Max 10.0% (Finger) / Max 9.0% (Powder)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">Codex Alimentarius</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Total Ash</td>
+                  <td className="p-4 sm:p-5 text-slate-300">ISO 928 / ASTA Method 3.0</td>
+                  <td className="p-4 sm:p-5 text-slate-200">Maximum 7.0% (w/w)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">FSSAI / ASTA Standards</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Acid Insoluble Ash</td>
+                  <td className="p-4 sm:p-5 text-slate-300">ISO 930 / ASTA Method 4.0</td>
+                  <td className="p-4 sm:p-5 text-slate-200">Maximum 1.0% (w/w)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">US FDA / EU Standard</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Heavy Metals (Lead, Arsenic)</td>
+                  <td className="p-4 sm:p-5 text-slate-300">ICP-MS / AAS</td>
+                  <td className="p-4 sm:p-5 text-emerald-300 font-semibold">Lead &lt; 2.0 ppm | Arsenic &lt; 1.0 ppm</td>
+                  <td className="p-4 sm:p-5 text-slate-400">EU Reg (EC) 1881/2006</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Aflatoxins (B1+B2+G1+G2)</td>
+                  <td className="p-4 sm:p-5 text-slate-300">HPLC-FLD / LC-MS/MS</td>
+                  <td className="p-4 sm:p-5 text-emerald-300 font-semibold">&lt; 10 ppb (B1 &lt; 5 ppb)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">European Union MRLs</td>
+                </tr>
+                <tr className="hover:bg-white/[0.02]">
+                  <td className="p-4 sm:p-5 font-semibold text-white">Adulteration / Artificial Dyes</td>
+                  <td className="p-4 sm:p-5 text-slate-300">TLC / Spectrophotometry / HPLC</td>
+                  <td className="p-4 sm:p-5 text-blue-300 font-semibold">Negative (100% Pure &amp; Natural)</td>
+                  <td className="p-4 sm:p-5 text-slate-400">Zero Lead Chromate / Sudan Dyes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* Compliance Note */}
       <section className="section-wrapper">
         <div className="glass-card p-6 border-blue-500/30 flex items-start gap-4 text-xs sm:text-sm text-slate-300 font-body">

@@ -16,7 +16,22 @@ export const metadata: Metadata = {
   description:
     'Learn about GoAmaze Global Exporters, an India-based merchant exporter under the GoAmaze umbrella committed to reliable sourcing and transparent B2B trade partnerships.',
   alternates: {
-    canonical: "about-us",
+    canonical: '/about-us',
+  },
+  openGraph: {
+    title: 'About Us | Your Trusted Indian Export Partner',
+    description:
+      'Learn about GoAmaze Global Exporters, an India-based merchant exporter committed to reliable sourcing and transparent B2B trade partnerships.',
+    url: 'https://goamazeglobal.com/about-us',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Your Trusted Indian Export Partner',
+    description:
+      'Reliable Indian merchant exporter of quality agricultural commodities and spices.',
   },
 };
 

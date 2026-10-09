@@ -17,6 +17,24 @@ export const metadata: Metadata = {
   title: 'Quality & Compliance | Quality You Can Source With Confidence',
   description:
     'Discover our quality assurance framework for Indian Turmeric export — structured supplier selection, buyer specification matching, laboratory testing coordination, and export documentation.',
+  alternates: {
+    canonical: '/quality-compliance',
+  },
+  openGraph: {
+    title: 'Quality & Compliance Framework | GoAmaze Global Exporters',
+    description:
+      'Rigorous quality assurance, laboratory testing coordination, and export compliance standards for Indian Turmeric products.',
+    url: 'https://goamazeglobal.com/quality-compliance',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Quality & Compliance | GoAmaze Global Exporters',
+    description:
+      'Quality assurance framework and testing standards for international turmeric exports from India.',
+  },
 };
 
 export default function QualityCompliancePage() {

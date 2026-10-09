@@ -9,6 +9,24 @@ export const metadata: Metadata = {
   title: 'For Importers | Sourcing Partner for Indian Turmeric',
   description:
     'Dedicated sourcing solutions for international spice importers, food manufacturers, distributors, and wholesalers looking for reliable Indian Turmeric Finger and Powder.',
+  alternates: {
+    canonical: '/for-importers',
+  },
+  openGraph: {
+    title: 'Solutions for International Importers | GoAmaze Global Exporters',
+    description:
+      'Direct Indian sourcing, tailored specifications, flexible bulk packaging, and sample coordination for global food and spice businesses.',
+    url: 'https://goamazeglobal.com/for-importers',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Spice Importers & Blenders | GoAmaze Global Exporters',
+    description:
+      'Reliable Indian merchant export partner for international B2B spice buyers.',
+  },
 };
 
 export default function ForImportersPage() {

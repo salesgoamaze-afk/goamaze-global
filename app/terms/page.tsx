@@ -6,6 +6,9 @@ import { companyContact } from '@/data/navigation';
 export const metadata: Metadata = {
   title: 'Terms & Conditions | GoAmaze Global Exporters',
   description: 'Terms and Conditions governing the use of GoAmaze Global Exporters website and international commercial inquiries.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsPage() {

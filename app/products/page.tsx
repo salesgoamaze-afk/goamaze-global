@@ -10,6 +10,24 @@ export const metadata: Metadata = {
   title: 'Products | Indian Turmeric Finger & Turmeric Powder',
   description:
     'Explore GoAmaze Global Exporters Indian Turmeric portfolio including premium whole Turmeric Fingers and finely milled Turmeric Powder for international B2B buyers.',
+  alternates: {
+    canonical: '/products',
+  },
+  openGraph: {
+    title: 'Indian Turmeric Products Catalog | GoAmaze Global Exporters',
+    description:
+      'Explore our bulk export catalog of high-curcumin whole turmeric fingers and ultra-fine milled turmeric powder.',
+    url: 'https://goamazeglobal.com/products',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indian Turmeric Products | GoAmaze Global Exporters',
+    description:
+      'Bulk export catalog of Indian Turmeric Fingers and Powder for global spice importers and manufacturers.',
+  },
 };
 
 export default function ProductsPage() {

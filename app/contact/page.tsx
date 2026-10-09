@@ -11,7 +11,22 @@ export const metadata: Metadata = {
   description:
     'Get in touch with the GoAmaze Global Exporters trade desk. Reach out at sales@goamazeglobal.com or +91 7021677207 for Indian turmeric sourcing, export partnerships, and product specifications.',
   alternates: {
-    canonical: "/contact-us",
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact Export Trade Desk | GoAmaze Global Exporters',
+    description:
+      'Connect with our Indian merchant export desk for product specifications, lab reports, pricing, and sample requests.',
+    url: 'https://goamazeglobal.com/contact',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Export Desk | GoAmaze Global Exporters',
+    description:
+      'Connect with our export desk for Indian turmeric sourcing inquiries.',
   },
 };
 

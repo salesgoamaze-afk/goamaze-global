@@ -22,6 +22,28 @@ export const metadata: Metadata = {
     'GoAmaze Global Exporters',
     'GoAmaze Store',
   ],
+  authors: [{ name: 'GoAmaze Global Exporters' }],
+  creator: 'GoAmaze Global Exporters',
+  publisher: 'GoAmaze Global Exporters',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -39,13 +61,21 @@ export const metadata: Metadata = {
     siteName: 'GoAmaze Global Exporters',
     locale: 'en_US',
     type: 'website',
-    images: ['/logo.png'],
+    images: [
+      {
+        url: '/logo-full.png',
+        width: 1200,
+        height: 630,
+        alt: 'GoAmaze Global Exporters Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GoAmaze Global Exporters | Indian Turmeric Exporter',
     description:
       'Reliable Indian merchant exporter of premium turmeric fingers and milled turmeric powder.',
+    images: ['/logo-full.png'],
   },
 };
 
@@ -58,16 +88,44 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'GoAmaze Global Exporters',
+    legalName: 'GoAmaze Global Exporters (A GoAmaze Enterprise)',
     url: 'https://goamazeglobal.com',
     logo: 'https://goamazeglobal.com/logo.png',
+    image: 'https://goamazeglobal.com/logo-full.png',
     description:
-      'India-based merchant exporter supplying turmeric finger and turmeric powder to international buyers.',
+      'India-based merchant exporter supplying premium whole turmeric finger and milled turmeric powder to international commercial buyers with reliable sourcing and professional export support.',
     email: 'sales@goamazeglobal.com',
     telephone: '+91 7021677207',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'India',
     },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Worldwide',
+    },
+    knowsAbout: [
+      'Indian Turmeric Export',
+      'Turmeric Finger Sourcing',
+      'Turmeric Powder Milling & Export',
+      'Spices Quality Compliance',
+      'International Bulk Agro Logistics',
+    ],
+    sameAs: [
+      'https://www.facebook.com/people/Goamaze-Global/61594881634810/',
+      'https://wa.me/917021677207',
+      'https://goamaze.store',
+    ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+91 7021677207',
+        contactType: 'sales',
+        email: 'sales@goamazeglobal.com',
+        areaServed: 'Worldwide',
+        availableLanguage: ['English', 'Hindi'],
+      },
+    ],
     parentOrganization: {
       '@type': 'Organization',
       name: 'GoAmaze',

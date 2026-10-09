@@ -9,6 +9,24 @@ export const metadata: Metadata = {
   title: 'Get a Quote | Request Sourcing Quotation for Indian Turmeric',
   description:
     'Request a commercial B2B quotation for Indian Turmeric Finger and Turmeric Powder. Specify quantity, packaging preferences, and destination port.',
+  alternates: {
+    canonical: '/get-a-quote',
+  },
+  openGraph: {
+    title: 'Request Export Quotation | GoAmaze Global Exporters',
+    description:
+      'Request commercial quotation, pricing, and volume terms for Indian Turmeric Fingers and Milled Powder.',
+    url: 'https://goamazeglobal.com/get-a-quote',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Get a Sourcing Quote | GoAmaze Global Exporters',
+    description:
+      'Commercial B2B quotations for Indian Turmeric Finger and Powder.',
+  },
 };
 
 export default function GetAQuotePage() {

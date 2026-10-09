@@ -6,6 +6,9 @@ import { companyContact } from '@/data/navigation';
 export const metadata: Metadata = {
   title: 'Trade Disclaimer | GoAmaze Global Exporters',
   description: 'Trade disclaimer regarding agricultural commodity specifications, export terms, and compliance representations.',
+  alternates: {
+    canonical: '/disclaimer',
+  },
 };
 
 export default function DisclaimerPage() {

@@ -6,6 +6,9 @@ import { companyContact } from '@/data/navigation';
 export const metadata: Metadata = {
   title: 'Privacy Policy | GoAmaze Global Exporters',
   description: 'Privacy Policy and information protection terms for GoAmaze Global Exporters website visitors and commercial inquiries.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

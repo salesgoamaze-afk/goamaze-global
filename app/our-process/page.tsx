@@ -10,6 +10,24 @@ export const metadata: Metadata = {
   title: 'Our Export Process | 6-Step International Trade Workflow',
   description:
     'Learn how GoAmaze Global Exporters manages international turmeric export from inquiry, requirement review, Indian sourcing, and quality checks to documentation and port dispatch.',
+  alternates: {
+    canonical: '/our-process',
+  },
+  openGraph: {
+    title: 'Our 6-Step Export Process | GoAmaze Global Exporters',
+    description:
+      'Explore our structured international trade workflow from inquiry, Indian farm sourcing, and lab checks to export packaging and ocean dispatch.',
+    url: 'https://goamazeglobal.com/our-process',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Export Process Workflow | GoAmaze Global Exporters',
+    description:
+      'Seamless 6-step international supply chain for Indian Turmeric bulk export.',
+  },
 };
 
 export default function OurProcessPage() {

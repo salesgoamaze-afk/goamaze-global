@@ -21,7 +21,31 @@ export const metadata: Metadata = {
   description:
     'Source premium whole dried Indian Turmeric Fingers from GoAmaze Global Exporters. Multiple grades (unpolished/single/double polished), bulk packaging, and customized export specifications.',
   alternates: {
-    canonical: "/turmeric-finger",
+    canonical: '/products/turmeric-finger',
+  },
+  openGraph: {
+    title: 'Turmeric Finger | Indian Whole Dried Turmeric Exporter',
+    description:
+      'Premium whole dried Indian Turmeric Fingers. High curcumin, unpolished, single/double polished export grades for international B2B buyers.',
+    url: 'https://goamazeglobal.com/products/turmeric-finger',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/products/turmeric-finger.jpg',
+        width: 1200,
+        height: 800,
+        alt: 'Premium Indian Turmeric Finger',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Turmeric Finger | Indian Whole Dried Turmeric Exporter',
+    description:
+      'Premium whole dried Indian Turmeric Fingers with custom export specifications and bulk packaging.',
+    images: ['/images/products/turmeric-finger.jpg'],
   },
 };
 
@@ -32,8 +56,42 @@ export default function TurmericFingerPage() {
     notFound();
   }
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Indian Turmeric Finger',
+    image: 'https://goamazeglobal.com/images/products/turmeric-finger.jpg',
+    description: product.fullDescription,
+    sku: 'GAG-TF-01',
+    category: 'Spices & Agricultural Commodities',
+    brand: {
+      '@type': 'Brand',
+      name: 'GoAmaze Global Exporters',
+    },
+    countryOfOrigin: {
+      '@type': 'Country',
+      name: 'India',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      price: 'Contact for Quote',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      url: 'https://goamazeglobal.com/products/turmeric-finger',
+      seller: {
+        '@type': 'Organization',
+        name: 'GoAmaze Global Exporters',
+      },
+    },
+  };
+
   return (
     <div className="relative overflow-hidden pt-3 sm:pt-4 pb-14 sm:pb-20 space-y-8 sm:space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="glow-blob w-[500px] h-[500px] bg-blue-600/10 -top-20 -left-20" />

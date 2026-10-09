@@ -20,9 +20,33 @@ export const metadata: Metadata = {
   title: 'Turmeric Powder | Indian Ground Turmeric Exporter',
   description:
     'Source finely milled, premium Indian Turmeric Powder from GoAmaze Global Exporters. Custom mesh granulation, food-grade bulk packaging, and laboratory documentation support.',
-    alternates: {
-      canonical: "/turmeric-powder",
-    },
+  alternates: {
+    canonical: '/products/turmeric-powder',
+  },
+  openGraph: {
+    title: 'Turmeric Powder | Indian Ground Turmeric Exporter',
+    description:
+      'Finely milled, high-curcumin Indian Turmeric Powder. Consistent golden mesh fineness and food-grade packaging for international spice blenders and food processors.',
+    url: 'https://goamazeglobal.com/products/turmeric-powder',
+    siteName: 'GoAmaze Global Exporters',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/products/turmeric-powder.png',
+        width: 1200,
+        height: 800,
+        alt: 'Premium Indian Turmeric Powder',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Turmeric Powder | Indian Ground Turmeric Exporter',
+    description:
+      'High-curcumin fine milled Indian turmeric powder with customizable mesh specifications and bulk export packaging.',
+    images: ['/images/products/turmeric-powder.png'],
+  },
 };
 
 export default function TurmericPowderPage() {
@@ -32,8 +56,42 @@ export default function TurmericPowderPage() {
     notFound();
   }
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Indian Turmeric Powder',
+    image: 'https://goamazeglobal.com/images/products/turmeric-powder.png',
+    description: product.fullDescription,
+    sku: 'GAG-TP-02',
+    category: 'Spices & Agricultural Commodities',
+    brand: {
+      '@type': 'Brand',
+      name: 'GoAmaze Global Exporters',
+    },
+    countryOfOrigin: {
+      '@type': 'Country',
+      name: 'India',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      price: 'Contact for Quote',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      url: 'https://goamazeglobal.com/products/turmeric-powder',
+      seller: {
+        '@type': 'Organization',
+        name: 'GoAmaze Global Exporters',
+      },
+    },
+  };
+
   return (
     <div className="relative overflow-hidden pt-3 sm:pt-4 pb-14 sm:pb-20 space-y-8 sm:space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="glow-blob w-[500px] h-[500px] bg-purple-600/10 -top-20 -left-20" />

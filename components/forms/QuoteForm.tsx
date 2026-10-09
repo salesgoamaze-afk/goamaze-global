@@ -33,9 +33,15 @@ export const QuoteForm: React.FC = () => {
     additionalRequirements: '',
   });
 
+  const [honeypot, setHoneypot] = useState('');
+  const [formLoadedAt, setFormLoadedAt] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFormLoadedAt(Date.now());
+  }, []);
 
   useEffect(() => {
     if (initialProduct === 'turmeric-powder') {
@@ -64,9 +70,10 @@ export const QuoteForm: React.FC = () => {
       !formData.companyName ||
       !formData.businessEmail ||
       !formData.country ||
+      !formData.phoneWhatsapp ||
       !formData.productRequirement
     ) {
-      setError('Please fill in all mandatory fields.');
+      setError('Please fill in all mandatory fields (Name, Company, Email, Country, Phone/WhatsApp, and Product Requirement).');
       setIsSubmitting(false);
       return;
     }
@@ -77,7 +84,11 @@ export const QuoteForm: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          honeypot,
+          formLoadedAt,
+        }),
       });
 
       const result = await res.json();
@@ -158,6 +169,20 @@ export const QuoteForm: React.FC = () => {
       onSubmit={handleSubmit}
       className="glass-card p-6 sm:p-10 relative overflow-hidden"
     >
+      {/* Invisible Honeypot Field (Anti-Bot Trap) */}
+      <div className="hidden absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
+        <label htmlFor="quote_website_hp">Do not fill this field</label>
+        <input
+          id="quote_website_hp"
+          type="text"
+          name="honeypot"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {error && (
         <div className="mb-6 p-4 rounded-xl bg-red-500/15 border border-red-500/30 text-red-300 text-sm flex items-center gap-2 font-body">
           <AlertCircle className="w-5 h-5 shrink-0" />
@@ -235,11 +260,12 @@ export const QuoteForm: React.FC = () => {
 
           <div className="sm:col-span-2">
             <label className="block text-xs font-semibold text-slate-300 mb-1.5 font-body">
-              Phone / WhatsApp Number
+              Phone / WhatsApp Number <span className="text-blue-400">*</span>
             </label>
             <input
               type="tel"
               name="phoneWhatsapp"
+              required
               value={formData.phoneWhatsapp}
               onChange={handleChange}
               placeholder="e.g. +971 50 123 4567"

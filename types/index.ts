@@ -55,6 +55,8 @@ export interface QuoteFormData {
   destinationPort: string;
   targetDeliveryDate: string;
   additionalRequirements: string;
+  honeypot?: string;
+  formLoadedAt?: number;
 }
 
 export interface ContactFormData {
@@ -65,4 +67,6 @@ export interface ContactFormData {
   country: string;
   subject: string;
   message: string;
+  honeypot?: string;
+  formLoadedAt?: number;
 }

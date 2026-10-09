@@ -46,6 +46,6 @@ export const companyContact = {
 export const socialLinks = [
   { id: 'linkedin', href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-[#0A66C2] hover:border-[#0A66C2]/60' },
   { id: 'facebook', href: 'https://www.facebook.com/people/Goamaze-Global/61594881634810/', label: 'Facebook', color: 'hover:text-[#1877F2] hover:border-[#1877F2]/60' },
-  { id: 'instagram', href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-[#E4405F] hover:border-[#E4405F]/60' },
+  { id: 'instagram', href: 'https://www.instagram.com/goamazeglobal/', label: 'Instagram', color: 'hover:text-[#E4405F] hover:border-[#E4405F]/60' },
   { id: 'whatsapp', href: 'https://wa.me/917021677207', label: 'WhatsApp', color: 'hover:text-[#25D366] hover:border-[#25D366]/60' },
 ];

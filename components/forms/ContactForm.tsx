@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { ContactFormData } from '@/types';
 
@@ -15,9 +15,15 @@ export const ContactForm: React.FC = () => {
     message: '',
   });
 
+  const [honeypot, setHoneypot] = useState('');
+  const [formLoadedAt, setFormLoadedAt] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFormLoadedAt(Date.now());
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -33,8 +39,14 @@ export const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setError(null);
 
-    if (!formData.fullName || !formData.email || !formData.message) {
-      setError('Please fill in your name, email, and message.');
+    if (
+      !formData.fullName ||
+      !formData.companyName ||
+      !formData.email ||
+      !formData.country ||
+      !formData.message
+    ) {
+      setError('Please fill in all mandatory fields (Name, Company, Email, Country, and Message).');
       setIsSubmitting(false);
       return;
     }
@@ -45,7 +57,11 @@ export const ContactForm: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          honeypot,
+          formLoadedAt,
+        }),
       });
 
       const result = await res.json();
@@ -106,6 +122,20 @@ export const ContactForm: React.FC = () => {
       onSubmit={handleSubmit}
       className="glass-card p-6 sm:p-8"
     >
+      {/* Invisible Honeypot Field (Anti-Bot Trap) */}
+      <div className="hidden absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true" tabIndex={-1}>
+        <label htmlFor="contact_website_hp">Do not fill this field</label>
+        <input
+          id="contact_website_hp"
+          type="text"
+          name="honeypot"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {error && (
         <div className="mb-6 p-3.5 rounded-xl bg-red-500/15 border border-red-500/30 text-red-300 text-xs flex items-center gap-2 font-body">
           <AlertCircle className="w-4 h-4 shrink-0" />
@@ -131,11 +161,12 @@ export const ContactForm: React.FC = () => {
 
         <div>
           <label className="block text-xs font-semibold text-slate-300 mb-1.5 font-body">
-            Company Name
+            Company Name <span className="text-blue-400">*</span>
           </label>
           <input
             type="text"
             name="companyName"
+            required
             value={formData.companyName}
             onChange={handleChange}
             placeholder="Your Company / Organization"
@@ -160,11 +191,12 @@ export const ContactForm: React.FC = () => {
 
         <div>
           <label className="block text-xs font-semibold text-slate-300 mb-1.5 font-body">
-            Country
+            Country <span className="text-blue-400">*</span>
           </label>
           <input
             type="text"
             name="country"
+            required
             value={formData.country}
             onChange={handleChange}
             placeholder="Your Country"

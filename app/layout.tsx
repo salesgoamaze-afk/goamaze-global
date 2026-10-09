@@ -134,6 +134,7 @@ export default function RootLayout({
       'International Bulk Agro Logistics',
     ],
     sameAs: [
+      'https://www.instagram.com/goamazeglobal/',
       'https://www.facebook.com/people/Goamaze-Global/61594881634810/',
       'https://wa.me/917021677207',
       'https://goamaze.store',
